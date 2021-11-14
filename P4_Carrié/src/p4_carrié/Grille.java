@@ -17,14 +17,36 @@ public class Grille {
     
     public  boolean ajouterJetonDansColonne (Jeton j, int col){
         if (CellulesJeu[0][col]!= null){
-        return false;
+            return false;
         }else{
             for (int i=0; i<=5; i++){
                 if (CellulesJeu[i][col]!=null){
                     CellulesJeu[i-1][col].affecterJeton(j);
-                    return true;
                 }
+                return true;
             }
         }
+    }
+    
+    public boolean etreRemplie(){
+        for(int j=0; j<=6; j++){
+            if (CellulesJeu[0][j]== null){
+                return false; 
+            } else {
+            return true;
+            }  
+        }
+}
+    
+    public void viderGrille (){
+        for (int i=0; i<= 5; i++){
+            for (int j=0; j<=6; j++){
+                CellulesJeu[i][j].jetonCourant=null;
+            }
+        }
+    }
+    
+    public void afficherGrilleSurConsole (){
+        
     }
 }
