@@ -6,8 +6,27 @@ package p4_carrié;
 
 /**
  *
- * @author titou
+ * @author lisa carrié
  */
 public class Partie {
+    Joueur [] ListeJoueurs = new Joueur [2];
+    Joueur joueurCourant;
+    Grille grilleJeu;
+    
+    public Partie (Joueur J1, Joueur J2){
+     
+    }
+    
+    public void attribuerCouleursAuxJoueurs (){
+        
+    }
+    
+    public void initialiserPartie(){
+        
+    }
+    
+    public void debuterPartie(){
+        
+    }
     
 }
