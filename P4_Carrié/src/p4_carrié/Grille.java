@@ -53,7 +53,7 @@ public class Grille {
             for (int j=0; j<=6; j++){
                 System.out.print(CellulesJeu[i][j]);
             }
-        }
+        }//couleurs trous noirs
     }
     
     public boolean celluleOccupee (int a, int b){
@@ -72,13 +72,47 @@ public class Grille {
     public String lireCouleurDuJeton (int  a , int b){
             return CellulesJeu[a][b].lireCouleurDuJeton();
         }
+
+    public boolean etreGagnantePourJoueur (Joueur G){
+        String c=G.Couleur;
+        for(int x=0; x<=3; x++){
+            for (int y=0; y<=5; y++){
+                if (c==CellulesJeu[x][y+1].lireCouleurDuJeton() && c==CellulesJeu[x][y+2].lireCouleurDuJeton() && c==CellulesJeu[x][y+3].lireCouleurDuJeton()){
+                return true;
+            } else {
+                    return false;
+                    }
+    }
+        }
+        for (int i=0; i<=6; i++){
+            for (int j=0; j<=2; j++){
+                if (c==CellulesJeu[i+1][j].lireCouleurDuJeton() && c==CellulesJeu[i+2][j].lireCouleurDuJeton() && c==CellulesJeu[i+3][j].lireCouleurDuJeton()){
+                return true;
+                    }
+            }
+        }
+        for(int x=0; x<=3; x++){
+            for (int y=0; y<=2; y++){
+                if ( c==CellulesJeu[x+1][y+1].lireCouleurDuJeton() && c==CellulesJeu[x+2][y+2].lireCouleurDuJeton() && c==CellulesJeu[x+3][y+3].lireCouleurDuJeton()){
+                return true;
+            }
+            }
+            }
+        for(int x=0; x<=3; x++){
+            for (int y=3; y<=5; y++){
+                if (c==CellulesJeu[x-1][y+1].lireCouleurDuJeton() && c==CellulesJeu[x-2][y+2].lireCouleurDuJeton() && c==CellulesJeu[x-3][y+3].lireCouleurDuJeton()){
+                return true;
+            }
+            }
+            }
+        return true;
+    }
+        
+    public boolean colonneRemplie (int j){
+        if (CellulesJeu[0][j]!= null){
+            return true;
+        }
+        return true;
     }
     
-    public boolean etreGagnantePourJouer (Joueur G){
-        
-    }
-    
-    public boolean colonneRemplie (int i){
-        
-    }
 }
