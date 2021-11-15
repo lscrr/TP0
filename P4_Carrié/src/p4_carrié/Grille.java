@@ -79,8 +79,6 @@ public class Grille {
             for (int y=0; y<=5; y++){
                 if (c==CellulesJeu[x][y+1].lireCouleurDuJeton() && c==CellulesJeu[x][y+2].lireCouleurDuJeton() && c==CellulesJeu[x][y+3].lireCouleurDuJeton()){
                 return true;
-            } else {
-                    return false;
                     }
     }
         }
@@ -105,7 +103,7 @@ public class Grille {
             }
             }
             }
-        return true;
+        return false;
     }
         
     public boolean colonneRemplie (int j){
