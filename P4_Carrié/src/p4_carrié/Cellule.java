@@ -19,15 +19,15 @@ public class Cellule {
         desintegrateur= false;
        
     }
-    public boolean affecterJeton (Jeton uneCellule){ 
-        if (jetonCourant == uneCellule){
+    public boolean affecterJeton (Jeton j){ 
+        if (jetonCourant == j){
             return true;  
         } else {
             return false;
         }
         
     }
-    public Jeton recupererJeton(){
+   /** public Jeton recupererJeton(){
         
     }
     public boolean supprimerJeton(){
@@ -62,6 +62,7 @@ public class Cellule {
         }
         
     }
+    * */
     public String lireCouleurDuJeton(){
         if ( jetonCourant != null){
             return jetonCourant.Couleur;
@@ -71,10 +72,11 @@ public class Cellule {
         }
         
     }
-    public boolean recupererDesintegrateur(){
+   /** public boolean recupererDesintegrateur(){
         
     }
     public boolean activerTrouNoir(){
         
     }
+    * */
 }
