@@ -20,12 +20,13 @@ public class Grille {
             return false;
         }else{
             for (int i=0; i<=5; i++){
-                if (CellulesJeu[i][col]!=null){
+                if (CellulesJeu[i][col].jetonCourant==null){
                     CellulesJeu[i-1][col].affecterJeton(j);
-                }
                 return true;
+                }  
             }
         }
+        return true;
     }
     
     public boolean etreRemplie(){
@@ -36,6 +37,7 @@ public class Grille {
             return true;
             }  
         }
+        return true;
     }
     
     public void viderGrille (){
@@ -64,10 +66,12 @@ public class Grille {
                 }
             }
         }
+        return true;
     }
     
     public String lireCouleurDuJeton (int  a , int b){
-        
+            return CellulesJeu[a][b].lireCouleurDuJeton();
+        }
     }
     
     public boolean etreGagnantePourJouer (Joueur G){
