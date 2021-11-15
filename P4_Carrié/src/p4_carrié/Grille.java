@@ -36,7 +36,7 @@ public class Grille {
             return true;
             }  
         }
-}
+    }
     
     public void viderGrille (){
         for (int i=0; i<= 5; i++){
@@ -52,5 +52,29 @@ public class Grille {
                 System.out.print(CellulesJeu[i][j]);
             }
         }
+    }
+    
+    public boolean celluleOccupee (int a, int b){
+        for  (a=0; a<=5; a++){
+            for ( b=0 ; b<=6; b++){
+                if (CellulesJeu[a][b]==null){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        }
+    }
+    
+    public String lireCouleurDuJeton (int  a , int b){
+        
+    }
+    
+    public boolean etreGagnantePourJouer (Joueur G){
+        
+    }
+    
+    public boolean colonneRemplie (int i){
+        
     }
 }
