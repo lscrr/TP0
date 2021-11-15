@@ -15,7 +15,7 @@ public class P4_Carrié {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        for (int i = 0; i <= 21; i++){
+       /** for (int i = 0; i <= 21; i++){
          Jeton J = new Jeton ("Jaune");
          String c = J.lireCouleur();
     System.out.println("jeton num "+i + " couleur :"+c);
@@ -26,6 +26,16 @@ public class P4_Carrié {
         J.lireCouleur();
     
 }
-    }
-    
+    }**/
+       Jeton J= new Jeton ("Rouge");
+       String S = J.lireCouleur();
+       System.out.println(S);
+       
+       Cellule c = new Cellule ();
+       c.affecterJeton(J);
+       S= c.lireCouleurDuJeton();
+       System.out.println(S);
+       
+       Grille g=new Grille ();
+       g.afficherGrilleSurConsole();
 }
