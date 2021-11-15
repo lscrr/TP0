@@ -12,26 +12,34 @@ package p4_carrié;
 public class Joueur {
     String Nom;
     String Couleur;
-    int ListeJetons []= new int [21];
-    int nombreDesintegrateurs;
+    Jeton ListeJetons []= new Jeton [21];
+    //int nombreDesintegrateurs;
     int nombreJetonsRestants;
-    public void Joueur (String NomJ1){ 
-        Nom = NomJ1;
+    
+    public void Joueur (String unNom){ 
+        Nom = unNom;
     }
-    public void affecterCouleur ( String CouleurJ1){
-        Couleur = CouleurJ1;
+    public void affecterCouleur ( String uneCouleur){
+        Couleur = uneCouleur;
     }
-    public boolean ajouterJeton ( int Jeton){
-        for (int i=0; i<21; i++){
-            
+    public boolean ajouterJeton ( Jeton j){
+        for (int i=0; i<=21; i++){
+            if(ListeJetons[i]== null){
+                ListeJetons[i]=j;
+            }
         }
         return true;
     }
-    public void obtenirDesintegrateur (){
+   /** public void obtenirDesintegrateur (){
         
     }
     public boolean utiliserDesintegrateur(){
         
     }
+    
+    public String lireCouleurDuJeton(){
+        
+    }
+    * */
 }
     
