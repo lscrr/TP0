@@ -37,5 +37,7 @@ public class P4_Carrié {
        System.out.println(S);
        
        Grille g=new Grille ();
+       g.ajouterJetonDansColonne(J,3);
        g.afficherGrilleSurConsole();
+}
 }
