@@ -17,9 +17,11 @@ public class Partie {
      
     }
     
-    public void attribuerCouleursAuxJoueurs (){
-        
+    public void attribuerCouleursAuxJoueurs (){ 
+        ListeJoueurs[0].affecterCouleur("Jaune");
+        ListeJoueurs[1].affecterCouleur("Rouge");
     }
+        
     
     public void initialiserPartie(){
         
