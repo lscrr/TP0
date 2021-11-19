@@ -56,8 +56,8 @@ public class Grille {
     public void afficherGrilleSurConsole (){
         for (int i=0; i<=5; i++){
             for (int j=0; j<=6; j++){
-                System.out.print(CellulesJeu[i][j]);
-            }
+                System.out.print(" " +CellulesJeu[i][j].lireCouleurDuJeton()+ " " );
+            }System.out.println();
         }//couleurs trous noirs
     }
     
@@ -117,5 +117,4 @@ public class Grille {
         }
         return true;
     }
-    
 }
