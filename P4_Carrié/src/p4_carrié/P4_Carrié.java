@@ -27,7 +27,7 @@ public class P4_Carrié {
     
 }
     }**/
-       Jeton J= new Jeton ("Rouge");
+      /** Jeton J= new Jeton ("Rouge");
        String S = J.lireCouleur();
        System.out.println(S);
        
@@ -39,5 +39,14 @@ public class P4_Carrié {
        Grille g=new Grille ();
        g.ajouterJetonDansColonne(J,3);
        g.afficherGrilleSurConsole();
+}**/
+      Joueur J1= new Joueur();
+      Joueur J2 = new Joueur();
+      
+      Partie p= new Partie (J1,J2);
+      p.initialiserPartie();
+      p.debuterPartie();
+      
+           
 }
 }

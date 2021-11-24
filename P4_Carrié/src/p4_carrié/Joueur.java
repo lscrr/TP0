@@ -23,11 +23,12 @@ public class Joueur {
         Couleur = uneCouleur;
     }
     public boolean ajouterJeton ( Jeton j){
-        for (int i=0; i<=21; i++){
+        for (int i=0; i<21; i++){
             if(ListeJetons[i]== null){
                 ListeJetons[i]=j;
             }
         }
+        nombreJetonsRestants++;
         return true;
     }
    /** public void obtenirDesintegrateur (){

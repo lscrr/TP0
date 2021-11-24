@@ -31,11 +31,11 @@ public class Partie {
     public void initialiserPartie(){
         grilleJeu = new Grille();
         //attribuerCouleursAuxJoueurs();
-        for(int i=0; i<=21; i++){
+        for(int i=0; i<21; i++){
             Jeton j = new Jeton ("Jaune");
             ListeJoueurs[0].ajouterJeton(j);
         }
-        for (int f=0; f<=21; f++){
+        for (int f=0; f<21; f++){
             Jeton g = new Jeton ("Rouge");
             ListeJoueurs[1].ajouterJeton(g);  
         }
@@ -47,14 +47,17 @@ public class Partie {
         joueurCourant=ListeJoueurs[0];
         boolean coupValide = false;
         int col=-1;
-     while (grilleJeu.etreGagnantePourJoueur(ListeJoueurs[0])==false 
+        
+    while (grilleJeu.etreGagnantePourJoueur(ListeJoueurs[0])==false 
              && grilleJeu.etreGagnantePourJoueur(ListeJoueurs[1])== false 
              && grilleJeu.etreRemplie()==false){
+        
+        grilleJeu.afficherGrilleSurConsole();
+        coupValide = false;
          while (coupValide == false) {
              Scanner sc = new Scanner(System.in);
-             System.out.println ("Saissisez la colonne dans laquelle vous souhaitez jouer.");
+             System.out.println (joueurCourant + ", saissisez la colonne dans laquelle vous souhaitez jouer.");
              col = sc.nextInt();
-             
              if (col <= 7 && col >= 1 ){      
                  if (grilleJeu.colonneRemplie(col-1)!=true){
                      coupValide = true; 
@@ -63,12 +66,14 @@ public class Partie {
                  System.out.println ("erreur, choisissez un nombre entre 1 et 7");
                  coupValide = false;
              }
+             Jeton g= joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants -1 ];
+             joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1]= null;
+             joueurCourant.nombreJetonsRestants --;
+             
+             grilleJeu.ajouterJetonDansColonne(g, col -1);
+             
          }
-        Jeton g= joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants -1 ];
-        joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1]= null;
-        joueurCourant.nombreJetonsRestants --;
         
-        grilleJeu.ajouterJetonDansColonne(g, col -1);
         
         
         if (joueurCourant == ListeJoueurs[1]){
@@ -78,7 +83,7 @@ public class Partie {
         }  
     
      }
-     System.out.println("Félicitations, "+ joueurCourant+ "vous remportez la partie!");
+     System.out.println("Félicitations, "+ joueurCourant+ ", vous remportez la partie!");
    
     }
         }

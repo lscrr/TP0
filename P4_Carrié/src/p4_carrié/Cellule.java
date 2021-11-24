@@ -20,7 +20,8 @@ public class Cellule {
        
     }
     public boolean affecterJeton (Jeton j){ 
-        if (jetonCourant == j){
+        if (jetonCourant == null){
+            jetonCourant=j;
             return true;  
         } else {
             return false;

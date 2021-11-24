@@ -21,12 +21,12 @@ public class Grille {
     }
     
     public  boolean ajouterJetonDansColonne (Jeton j, int col){
-        if (CellulesJeu[0][col]!= null){
+        if (CellulesJeu[0][col].jetonCourant!= null){
             return false;
         }else{
-            for (int i=0; i<=5; i++){
+            for (int i=5; i>=0; i++){
                 if (CellulesJeu[i][col].jetonCourant==null){
-                    CellulesJeu[i-1][col].affecterJeton(j);
+                    CellulesJeu[i][col].affecterJeton(j);
                 return true;
                 }  
             }
@@ -36,11 +36,9 @@ public class Grille {
     
     public boolean etreRemplie(){
         for(int j=0; j<=6; j++){
-            if (CellulesJeu[0][j]== null){
+            if (CellulesJeu[0][j].jetonCourant== null){
                 return false; 
-            } else {
-            return true;
-            }  
+            }
         }
         return true;
     }
@@ -80,30 +78,39 @@ public class Grille {
 
     public boolean etreGagnantePourJoueur (Joueur G){
         String c=G.Couleur;
-        for(int x=0; x<=3; x++){
-            for (int y=0; y<=5; y++){
-                if (c==CellulesJeu[x][y+1].lireCouleurDuJeton() && c==CellulesJeu[x][y+2].lireCouleurDuJeton() && c==CellulesJeu[x][y+3].lireCouleurDuJeton()){
+        for(int x=0; x>=0 && x<=5; x++){
+            for (int y=0; y>=0 && y<=3; y++){ // verifier si une ligne est gagnante
+                if (c==CellulesJeu[x][y+1].lireCouleurDuJeton() 
+                        && c==CellulesJeu[x][y+2].lireCouleurDuJeton() 
+                        && c==CellulesJeu[x][y+3].lireCouleurDuJeton()){
                 return true;
                     }
     }
         }
-        for (int i=0; i<=6; i++){
-            for (int j=0; j<=2; j++){
-                if (c==CellulesJeu[i+1][j].lireCouleurDuJeton() && c==CellulesJeu[i+2][j].lireCouleurDuJeton() && c==CellulesJeu[i+3][j].lireCouleurDuJeton()){
+        for (int x=0; x>=0 && x<=2; x++){ //verifier si une colonne est gagnante
+            for (int y=0;y>=0 && y<=6; y++){
+                if (c==CellulesJeu[x+1][y].lireCouleurDuJeton() 
+                        && c==CellulesJeu[x+2][y].lireCouleurDuJeton() 
+                        && c==CellulesJeu[x+3][y].lireCouleurDuJeton()){
                 return true;
                     }
             }
         }
-        for(int x=0; x<=3; x++){
-            for (int y=0; y<=2; y++){
-                if ( c==CellulesJeu[x+1][y+1].lireCouleurDuJeton() && c==CellulesJeu[x+2][y+2].lireCouleurDuJeton() && c==CellulesJeu[x+3][y+3].lireCouleurDuJeton()){
+        for(int x=0;  x>=0 && x<=2; x++){
+            for (int y=0; y>=0 && y<=3; y++){ // verifier si une diagonale montante est gagnante
+                if ( c==CellulesJeu[x+1][y+1].lireCouleurDuJeton() 
+                        && c==CellulesJeu[x+2][y+2].lireCouleurDuJeton() 
+                        && c==CellulesJeu[x+3][y+3].lireCouleurDuJeton()){
                 return true;
             }
             }
             }
-        for(int x=0; x<=3; x++){
-            for (int y=3; y<=5; y++){
-                if (c==CellulesJeu[x-1][y+1].lireCouleurDuJeton() && c==CellulesJeu[x-2][y+2].lireCouleurDuJeton() && c==CellulesJeu[x-3][y+3].lireCouleurDuJeton()){
+        for(int x=0;x>=3 && x<=5; x++){
+            for (int y=0; y>=0 && y<=3; y++){ // verifier si une diagonale descendante est gagnante
+                if (c==CellulesJeu[x-1][y+1].lireCouleurDuJeton() 
+                        && c==CellulesJeu[x-2][y+2].lireCouleurDuJeton() 
+                        && c==CellulesJeu[x-3][y+3].lireCouleurDuJeton()){
+                    
                 return true;
             }
             }
@@ -112,9 +119,9 @@ public class Grille {
     }
         
     public boolean colonneRemplie (int j){
-        if (CellulesJeu[0][j]!= null){
+        if (CellulesJeu[0][j].jetonCourant!= null){
             return true;
         }
-        return true;
+        return false;
     }
 }
