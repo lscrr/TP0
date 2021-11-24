@@ -14,7 +14,8 @@ public class Partie {
     Grille grilleJeu = new Grille();
     
     public Partie (Joueur J1, Joueur J2){
-     
+        ListeJoueurs[0]= J1;
+        ListeJoueurs[1]= J2;
     }
     
     public void attribuerCouleursAuxJoueurs (){ 
@@ -26,18 +27,25 @@ public class Partie {
     
     public void initialiserPartie(){
         grilleJeu = new Grille();
-        attribuerCouleursAuxJoueurs();
-        Jeton j = new Jeton ("Jaune");
-        ListeJoueurs[0].ajouterJeton(j);
-        Jeton g = new Jeton ("Rouge");
-        ListeJoueurs[1].ajouterJeton(g); 
+        //attribuerCouleursAuxJoueurs();
+        for(int i=0; i<=21; i++){
+            Jeton j = new Jeton ("Jaune");
+            ListeJoueurs[0].ajouterJeton(j);
+        }
+        for (int f=0; f<=21; f++){
+            Jeton g = new Jeton ("Rouge");
+            ListeJoueurs[1].ajouterJeton(g);  
+        }
+         
     }
     
     public void debuterPartie(){
         joueurCourant=ListeJoueurs[0];
         while (grilleJeu.etreGagnantePourJoueur(ListeJoueurs[0])==false && grilleJeu.etreGagnantePourJoueur(ListeJoueurs[1])== false && grilleJeu.etreRemplie()==false){
+            System.out.println("Saissisez une colonne");
             Jeton x;
             x = ListeJoueurs[0].ListeJetons[0];
+            int col; 
             grilleJeu.ajouterJetonDansColonne(x,col);
             
             
