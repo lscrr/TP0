@@ -4,6 +4,8 @@
  */
 package p4_carrié;
 
+import java.util.Scanner;
+
 /**
  *
  * @author lisa carrié
@@ -17,6 +19,7 @@ public class Partie {
         ListeJoueurs[0]= J1;
         ListeJoueurs[1]= J2;
     }
+
     
     public void attribuerCouleursAuxJoueurs (){ 
         
@@ -40,17 +43,44 @@ public class Partie {
     }
     
     public void debuterPartie(){
+        
         joueurCourant=ListeJoueurs[0];
-        while (grilleJeu.etreGagnantePourJoueur(ListeJoueurs[0])==false && grilleJeu.etreGagnantePourJoueur(ListeJoueurs[1])== false && grilleJeu.etreRemplie()==false){
-            System.out.println("Saissisez une colonne");
-            Jeton x;
-            x = ListeJoueurs[0].ListeJetons[0];
-            int col; 
-            grilleJeu.ajouterJetonDansColonne(x,col);
-            
-            
-                    
-       }
-    }
+        boolean coupValide = false;
+        int col=-1;
+     while (grilleJeu.etreGagnantePourJoueur(ListeJoueurs[0])==false 
+             && grilleJeu.etreGagnantePourJoueur(ListeJoueurs[1])== false 
+             && grilleJeu.etreRemplie()==false){
+         while (coupValide == false) {
+             Scanner sc = new Scanner(System.in);
+             System.out.println ("Saissisez la colonne dans laquelle vous souhaitez jouer.");
+             col = sc.nextInt();
+             
+             if (col <= 7 && col >= 1 ){      
+                 if (grilleJeu.colonneRemplie(col-1)!=true){
+                     coupValide = true; 
+                 }
+             } else { 
+                 System.out.println ("erreur, choisissez un nombre entre 1 et 7");
+                 coupValide = false;
+             }
+         }
+        Jeton g= joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants -1 ];
+        joueurCourant.ListeJetons[joueurCourant.nombreJetonsRestants - 1]= null;
+        joueurCourant.nombreJetonsRestants --;
+        
+        grilleJeu.ajouterJetonDansColonne(g, col -1);
+        
+        
+        if (joueurCourant == ListeJoueurs[1]){
+            joueurCourant = ListeJoueurs[0];
+        }else {
+            joueurCourant= ListeJoueurs[1];
+        }  
     
-}
+     }
+     System.out.println("Félicitations, "+ joueurCourant+ "vous remportez la partie!");
+   
+    }
+        }
+    
+
