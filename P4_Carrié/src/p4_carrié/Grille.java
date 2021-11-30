@@ -77,7 +77,8 @@ public class Grille {
         String c=G.Couleur;
         for(int x=0; x>= 0 && x<=5; x++){
             for (int y=0; y>=0 && y<=3; y++){ // verifier si une ligne est gagnante
-                if ( c==CellulesJeu[x][y+1].lireCouleurDuJeton() 
+                if (  c==CellulesJeu[x][y].lireCouleurDuJeton() 
+                        && c==CellulesJeu[x][y+1].lireCouleurDuJeton() 
                         && c==CellulesJeu[x][y+2].lireCouleurDuJeton() 
                         && c==CellulesJeu[x][y+3].lireCouleurDuJeton()){
                 return true;
@@ -86,7 +87,8 @@ public class Grille {
         }
         for (int x=0; x>=0 && x<=2; x++){ //verifier si une colonne est gagnante
             for (int y=0; y>= 0 && y<=6; y++){
-                if (c==CellulesJeu[x+1][y].lireCouleurDuJeton() 
+                if (c==CellulesJeu[x][y].lireCouleurDuJeton()
+                        && c==CellulesJeu[x+1][y].lireCouleurDuJeton() 
                         && c==CellulesJeu[x+2][y].lireCouleurDuJeton() 
                         &&c==CellulesJeu[x+3][y].lireCouleurDuJeton()){
                 return true;
@@ -95,7 +97,8 @@ public class Grille {
         }
         for(int x=0; x>=0 && x<=2; x++){
             for (int y=0; y>= 0 && y<=3; y++){ // verifier si une diagonale montante est gagnante
-                if ( c==CellulesJeu[x+1][y+1].lireCouleurDuJeton() 
+                if ( c==CellulesJeu[x][y].lireCouleurDuJeton()
+                        && c==CellulesJeu[x+1][y+1].lireCouleurDuJeton() 
                         && c==CellulesJeu[x+2][y+2].lireCouleurDuJeton() 
                         &&c==CellulesJeu[x+3][y+3].lireCouleurDuJeton()){
                 return true;
@@ -104,7 +107,8 @@ public class Grille {
             }
         for(int x=0;x>=1 && x<=5; x++){
             for (int y=0;y<=3; y++){ // verifier si une diagonale descendante est gagnante
-                if (c==CellulesJeu[x-1][y+1].lireCouleurDuJeton()
+                if (c==CellulesJeu[x][y].lireCouleurDuJeton()
+                        && c==CellulesJeu[x-1][y+1].lireCouleurDuJeton()
                         && c==CellulesJeu[x-2][y+2].lireCouleurDuJeton()
                         && c==CellulesJeu[x-3][y+3].lireCouleurDuJeton()){
                     
