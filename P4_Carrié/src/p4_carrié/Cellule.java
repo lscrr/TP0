@@ -69,7 +69,7 @@ public class Cellule {
             return jetonCourant.Couleur;
         }
         else {
-            return "vide";
+            return "O";
         }
         
     }

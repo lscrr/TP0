@@ -10,6 +10,11 @@ import java.util.Scanner;
  *
  * @author lisa carrié
  */
+
+/** Je n'arrive pas a finir la partie lorsque la grille est gagnante Mon jeu ne fonctionne donc pas 
+ c'est pour cela que ma partie graphique n'est
+ * pas interessante vu que la partie ne se termine jamais....
+**/
 public class Partie {
     Joueur [] ListeJoueurs = new Joueur [2];
     Joueur joueurCourant;
@@ -78,10 +83,11 @@ public class Partie {
         }else {
             joueurCourant= ListeJoueurs[1];
         }  
-    
-    } 
+    }
      System.out.println("Félicitations, "+ joueurCourant+ ", vous remportez la partie!");
      }
+        
+        
     }
         
     
