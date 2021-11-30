@@ -42,7 +42,7 @@ public class Partie {
          
     }
     
-    public void debuterPartie(){
+        public void debuterPartie(){
         
         joueurCourant=ListeJoueurs[0];
         boolean coupValide = false;
@@ -73,19 +73,15 @@ public class Partie {
              grilleJeu.ajouterJetonDansColonne(g, col -1);
              
          }
-        
-        
-        
-        if (joueurCourant == ListeJoueurs[1]){
+           if (joueurCourant == ListeJoueurs[1]){
             joueurCourant = ListeJoueurs[0];
         }else {
             joueurCourant= ListeJoueurs[1];
         }  
     
-     }
+    } 
      System.out.println("Félicitations, "+ joueurCourant+ ", vous remportez la partie!");
-   
+     }
     }
-        }
+        
     
-
