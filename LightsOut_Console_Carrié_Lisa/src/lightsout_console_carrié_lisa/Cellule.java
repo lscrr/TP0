@@ -12,13 +12,13 @@ public class Cellule {
     
     boolean état;
     
-    public boolean étatCellule (String cellule){
-        if (état= true){
-            cellule = "allumée";
+    
+    public boolean étatCellule (){
+        if (état== true){
+            return true;
         }else{
-            cellule = "éteinte";
+            return false;
         }
-        return false;
     }
     
     public boolean allumerCellule(){
