@@ -19,23 +19,15 @@ public class Grille {
             }System.out.println();
         }
     }
-    public boolean grilleGagnante(){
+    public boolean grilleGagnante(){    // la grille est gagnante si elle est totalement éteinte 
         for (int i=0; i<5; i++){
             for (int j=0; j<5; j++){
-                if (CellulesLumineuses[i][j].étatCellule()== true){
+                if (CellulesLumineuses[i][j].étatCellule()== true){   // si l'une des cellules est allumée alors la grille n'est pas gagnante
                 return false;   
             }
         }
         }
-        return true;
-    }
-    
-    public void allumerGrille(){
-        
-    }
-    
-    public void éteindreGrille(){
-        
+        return true;      // sinon elle est gagnante
     }
     
     public void présenceDeLumière(int i, int j){
@@ -45,7 +37,9 @@ public class Grille {
             CellulesLumineuses[i][j-1].changerEtat();
             CellulesLumineuses[i+1][j].changerEtat();
             CellulesLumineuses[i-1][j].changerEtat();
-                                                             // on s'attaque à présent aux coins de la grile
+            
+            // on s'attaque à présent aux coins de la grile
+                                                             
         } else if ( i==0 && j==0 ){                    // pour le cas du point (0,0) 
             CellulesLumineuses[i][j+1].changerEtat();
             CellulesLumineuses [i+1][j].changerEtat();
@@ -61,7 +55,9 @@ public class Grille {
         }else if (i==4 && j==4){                          // pour le cas du point (4,4)
             CellulesLumineuses[i][j-1].changerEtat();
             CellulesLumineuses[i-1][j].changerEtat();
-                                                        // à présent, on isole les cellules sur les bords de la grille (en dehors des coins)
+            
+            // à présent, on isole les cellules sur les bords de la grille (en dehors des coins)
+        
         } else if ((i>0 && i<4) && j==0){             // pour les cellules du haut de la grille
             CellulesLumineuses[i-1][j].changerEtat();
             CellulesLumineuses [i+1][j].changerEtat();

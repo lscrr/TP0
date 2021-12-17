@@ -10,10 +10,10 @@ package lightsout_console_carrié_lisa;
  */
 public class Cellule {
     
-    boolean état;
+    boolean état;         // on attribut à la classe cellule un état
     
     
-    public boolean étatCellule (){
+    public boolean étatCellule (){   // on détermine l'état de la cellule : lumineuse ou non
         if (état== true){
             return true;
         }else{
@@ -21,7 +21,7 @@ public class Cellule {
         }
     }
     
-    public boolean allumerCellule(){
+    public boolean allumerCellule(){   // on allume une cellule éteinte
             if ( état == false){
                 état=true;
          
@@ -30,7 +30,7 @@ public class Cellule {
             return false;
         }
     
-    public boolean éteindreCellule(){
+    public boolean éteindreCellule(){      // on éteind une cellule allumée
         if (état==true){
             état= false;
             
@@ -39,7 +39,7 @@ public class Cellule {
         return true;
     }
     
-    public void changerEtat(){
+    public void changerEtat(){        // si la cellule est éteinte alors on allume sinon on l'éteind
         if (allumerCellule() == true){
             éteindreCellule();
         }else{
