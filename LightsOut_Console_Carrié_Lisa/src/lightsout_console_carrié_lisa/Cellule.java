@@ -11,7 +11,6 @@ package lightsout_console_carrié_lisa;
 public class Cellule {
     
     boolean état;
-    boolean c;
     
     public boolean étatCellule (String cellule){
         if (état= true){
@@ -22,27 +21,31 @@ public class Cellule {
         return false;
     }
     
-    public boolean allumerCellule(boolean celluleAllumée){
+    public boolean allumerCellule(){
             if ( état == false){
-                état = étatcellule;
-                return false;
+                état=true;
+         
+                return true;
             }
-            return true;
+            return false;
         }
     
-    public void éteindreCellule(boolean celluleEteinte){
+    public boolean éteindreCellule(){
         if (état==true){
-            état = celluleEteinte;
+            état= false;
+            
+            return false;
         }
+        return true;
     }
     
-    public boolean changerEtat(boolean cellule){
-        if (cellule.allumerCellule() = true){
-            cellule.éteindreCellule();
+    public void changerEtat(){
+        if (allumerCellule() == true){
+            éteindreCellule();
         }else{
-            cellule.allumerCellule();
-        }
-    }
+            allumerCellule();
+        } 
+    } 
     }
     
     
