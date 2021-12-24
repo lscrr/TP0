@@ -16,12 +16,18 @@ public class Partie {
    Random lumière = new Random();
    Scanner sc= new Scanner(System.in);
    
-   public void initialiserPartie(){
-      while (grilleLumière.grilleGagnante()!=true){
-          System.out.println("Selectionnez les coordonnées de la cellule dans laquelle vous souhaitez jouer"); 
+   public void initialiserPartie(){  // Pour initialiser la partie, il suffit d'allumer aléatoirement des lumières dans les cellules
+       grilleLumière =new Grille();
+       int x = lumière.nextInt(26);
+       
       }
-   }
-   grg= rand.nextInt(26);
+    public void débuterPartie(){
+        while (grilleLumière.grilleGagnante()!=true){
+          System.out.println("Selectionnez les coordonnées de la cellule dans laquelle vous souhaitez jouer");
+        }
+    }
+
+ }
+   //grg= rand.nextInt(26);
    
-}
-c 
+  
