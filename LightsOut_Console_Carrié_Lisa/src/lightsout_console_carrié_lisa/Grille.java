@@ -9,8 +9,8 @@ package lightsout_console_carrié_lisa;
  * @author lisa carrié
  */
 public class Grille {
-    Cellule [][] CellulesLumineuses = new Cellule [5][5];
-    Cellule CelluleCourante;
+    Cellule [][] CellulesLumineuses = new Cellule [5][5];    // on crée les cellules
+
     
     public void afficherGrilleSurConsole(){
         for (int i =0; i<5 ; i++){
