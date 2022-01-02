@@ -32,22 +32,28 @@ public class Partie {
             
             grilleLumière.afficherGrilleSurConsole(); // on affiche la grille sur l'écran
             
-            Scanner sc2 = new Scanner(System.in); // scanner permet de prendre en compte les choix du joueur
+            Scanner sc2 = new Scanner(System.in); // on s'aide d'un scanner pour prendre en compte les choix du joueur
             
-            System.out.println("Selectionner la ligne dans laquelle vous souhaitez jouer"); // puis on le demande de choisir une ligne
+            System.out.println("Selectionner la ligne dans laquelle vous souhaitez jouer"); // puis on lui demande de choisir une ligne
             lig = sc2.nextInt();
             
             Scanner sc1 = new Scanner(System.in);
              
-            System.out.println("Selectionnez la colonne dans laquelle vous souhaitez jouer"); // on demande au joueur de choisir une colonne 
+            System.out.println("Selectionnez la colonne dans laquelle vous souhaitez jouer"); // ainsi qu'une colonne 
             col = sc1.nextInt();
             
-            if ()
+           // if (grilleLumière.CellulesLumineuses[lig][col].étatCellule()== true){    // si la cellule selectionnée par le joueur est allumée 
+                grilleLumière.CellulesLumineuses[lig][col].changerEtat();            // alors on change l'état de la cellule 
+                grilleLumière.présenceDeLumière(lig, col);          // et on change les états des cellules voisines (au plus 4)
                 
                 
+            }//grilleLumière.grilleGagnante()== false;
+        System.out.println("Féliciations vous avez gagné!");
             }
-        }
+            
+            }
+        
 
-    }
+    
     //grg= rand.nextInt(26);
 
