@@ -32,7 +32,7 @@ public class Partie {
             
             grilleLumière.afficherGrilleSurConsole(); // on affiche la grille sur l'écran
             
-            Scanner sc2 = new Scanner(System.in); // on s'aide d'un scanner pour prendre en compte les choix du joueur
+            Scanner sc2 = new Scanner(System.in); // on s'aide d'un scanner pour prendre en compte les choix de selections de cellules du joueur
             
             System.out.println("Selectionner la ligne dans laquelle vous souhaitez jouer"); // puis on lui demande de choisir une ligne
             lig = sc2.nextInt();

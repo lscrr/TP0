@@ -16,7 +16,13 @@ public class LightsOut_Console_Carrié_Lisa {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    Partie p= new Partie ();
-    p.
+   
+    // why je n'arrive pas appliquer des méthodes à p????? à résoudre 
+    Partie jeu= new Partie ();
+    jeu.initialiserPartie();
+    jeu.débuterPartie();
+    
+    
+    
 
 }

@@ -42,7 +42,7 @@ public class Cellule {
         return true;
     }
     
-    public void changerEtat(){        // si la cellule est éteinte alors on allume sinon on l'éteind
+    public void changerEtat(){        // si la cellule est éteinte alors on l'allume sinon on l'éteind
         
         if (allumerCellule() == true){
             éteindreCellule();
