@@ -16,5 +16,7 @@ public class LightsOut_Console_Carrié_Lisa {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-    
+    Partie p= new Partie ();
+    p.
+
 }

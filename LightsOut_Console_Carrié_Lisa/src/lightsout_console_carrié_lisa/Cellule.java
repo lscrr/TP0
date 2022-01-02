@@ -14,6 +14,7 @@ public class Cellule {
     
     
     public boolean étatCellule (){   // on détermine l'état de la cellule : lumineuse ou non
+       
         if (état== true){
             return true;
         }else{
@@ -22,7 +23,8 @@ public class Cellule {
     }
     
     public boolean allumerCellule(){   // on allume une cellule éteinte
-            if ( état == false){
+            
+        if ( état == false){
                 état=true;
          
                 return true;
@@ -31,6 +33,7 @@ public class Cellule {
         }
     
     public boolean éteindreCellule(){      // on éteind une cellule allumée
+       
         if (état==true){
             état= false;
             
@@ -40,6 +43,7 @@ public class Cellule {
     }
     
     public void changerEtat(){        // si la cellule est éteinte alors on allume sinon on l'éteind
+        
         if (allumerCellule() == true){
             éteindreCellule();
         }else{

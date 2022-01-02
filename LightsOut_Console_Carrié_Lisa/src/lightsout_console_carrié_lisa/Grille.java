@@ -9,10 +9,12 @@ package lightsout_console_carrié_lisa;
  * @author lisa carrié
  */
 public class Grille {
+    
     Cellule [][] CellulesLumineuses = new Cellule [5][5];    // on crée les cellules
 
     
     public void afficherGrilleSurConsole(){
+        
         for (int i =0; i<5 ; i++){
             for (int j=0; j<5; j++){
                 System.out.print(" " +CellulesLumineuses [i][j].état + " ");
@@ -20,6 +22,7 @@ public class Grille {
         }
     }
     public boolean grilleGagnante(){    // la grille est gagnante si elle est totalement éteinte 
+        
         for (int i=0; i<5; i++){
             for (int j=0; j<5; j++){
                 if (CellulesLumineuses[i][j].étatCellule()== true){   // si l'une des cellules est allumée alors la grille n'est pas gagnante
