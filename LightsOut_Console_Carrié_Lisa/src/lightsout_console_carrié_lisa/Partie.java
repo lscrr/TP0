@@ -34,7 +34,7 @@ public class Partie {
             
             Scanner sc2 = new Scanner(System.in); // on s'aide d'un scanner pour prendre en compte les choix de selections de cellules du joueur
             
-            System.out.println("Selectionner la ligne dans laquelle vous souhaitez jouer"); // puis on lui demande de choisir une ligne
+            System.out.println("Selectionnez la ligne dans laquelle vous souhaitez jouer"); // puis on lui demande de choisir une ligne
             lig = sc2.nextInt();
             
             Scanner sc1 = new Scanner(System.in);
@@ -47,7 +47,7 @@ public class Partie {
                 grilleLumière.présenceDeLumière(lig, col);          // et on change les états des cellules voisines (au plus 4)
                 
                 
-            }//grilleLumière.grilleGagnante()== false;
+            }//grilleLumière.grilleGagnante()== true;
         System.out.println("Féliciations vous avez gagné!");
             }
             
