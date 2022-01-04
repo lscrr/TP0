@@ -10,7 +10,7 @@ package lightsout_console_carrié_lisa;
  */
 public class Cellule {
     
-    boolean état;         // on attribut à la classe cellule un état
+    boolean état=false;         // on attribut à la classe cellule un état
     
     
     public boolean étatCellule (){   // on détermine l'état de la cellule : lumineuse ou non

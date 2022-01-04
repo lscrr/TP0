@@ -12,6 +12,13 @@ public class Grille {
     
     Cellule [][] CellulesLumineuses = new Cellule [5][5];    // on crée les cellules
 
+    public Grille() {
+        for (int i =0; i<5 ; i++){
+            for (int j=0; j<5; j++){
+                CellulesLumineuses [i][j]= new Cellule ();
+            }
+    }
+    }
     
     public void afficherGrilleSurConsole(){
         
@@ -83,7 +90,9 @@ public class Grille {
     
     
         }
-    
- }
+    public void allumerCellule (int x, int y){
+        CellulesLumineuses[x][y].allumerCellule();
+    }
+ } 
     
 
