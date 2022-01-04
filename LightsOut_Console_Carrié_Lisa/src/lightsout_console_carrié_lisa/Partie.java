@@ -15,12 +15,14 @@ public class Partie {
 
     Grille grilleLumière = new Grille();
     Random lumière = new Random();
+  
 
     public void initialiserPartie() {  // Pour initialiser la partie, il suffit d'allumer aléatoirement des lumières dans les cellules
         
         grilleLumière = new Grille(); // on met en place une grille dans laquelle le joueur pourra jouer
-        int x = lumière.nextInt(26);  // on y place aléatoirement (à l'aide de random) des lumières
-        //grilleLumière.
+        int x = lumière.nextInt(5);
+        int y =lumière.nextInt(5);      // on y place aléatoirement (à l'aide de random) des lumières
+        grilleLumière.allumerCellule(x, y);
     }
 
     public void débuterPartie() {
@@ -29,6 +31,8 @@ public class Partie {
         int col;
         
         while (grilleLumière.grilleGagnante() != true) { // tant  que la grille n'est pas gagnante alors
+            
+        
             
             grilleLumière.afficherGrilleSurConsole(); // on affiche la grille sur l'écran
             
@@ -42,7 +46,8 @@ public class Partie {
             System.out.println("Selectionnez la colonne dans laquelle vous souhaitez jouer"); // ainsi qu'une colonne 
             col = sc1.nextInt();
             
-           // if (grilleLumière.CellulesLumineuses[lig][col].étatCellule()== true){    // si la cellule selectionnée par le joueur est allumée 
+           if (grilleLumière.CellulesLumineuses[lig][col].étatCellule()== true){    // si la cellule selectionnée par le joueur est allumée 
+               
                 grilleLumière.CellulesLumineuses[lig][col].changerEtat();            // alors on change l'état de la cellule 
                 grilleLumière.présenceDeLumière(lig, col);          // et on change les états des cellules voisines (au plus 4)
                 
@@ -51,7 +56,8 @@ public class Partie {
         System.out.println("Féliciations vous avez gagné!");
             }
             
-            }
+    }
+}
         
 
     
